@@ -1,0 +1,28 @@
+--Create a blankets store database 
+
+CREATE TABLE blankets(ID INTEGER PRIMARY KEY, NAME TEXT, COLOR TEXT, AISLE INTEGER, PRICE INTEGER); 
+
+INSERT INTO blankets VALUES (1, "Scarlata", "Red", 2, 30); 
+INSERT INTO blankets VALUES (2, "Amira", "Blue", 1, 25); 
+INSERT INTO blankets VALUES (3, "Sana", "Green", 4, 23); 
+INSERT INTO blankets VALUES (4, "Hina", "Burgandy", 12, 20);
+INSERT INTO blankets VALUES (5, "Lili", "Baby blue", 6, 25); 
+INSERT INTO blankets VALUES (6, "Maru", "Purple", 5, 25); 
+INSERT INTO blankets VALUES (7, "Cari", "Pink", 9, 27); 
+INSERT INTO blankets VALUES (8, "Carmen", "Blood red", 7, 30); 
+INSERT INTO blankets VALUES (9, "Niki", "Baby pink", 3, 30); 
+INSERT INTO blankets VALUES (10, "Khani", "Beige", 4, 20); 
+INSERT INTO blankets VALUES (11, "Kili", "Brown", 6, 22); 
+INSERT INTO blankets VALUES (12, "Luna", "Dark blue", 11, 23);
+INSERT INTO blankets VALUES (13, "Zoe", "Black", 8, 18); 
+INSERT INTO blankets VALUES (14, "Jani", "White", 10, 30); 
+INSERT INTO blankets VALUES (15, "Sol", "Bright yellow", 11, 25); 
+
+--Display the database ordered by aisles.
+Select * FROM blankets ORDER BY AISLE; 
+
+--How much money will I earn by selling all blankets?
+SELECT SUM(PRICE) FROM blankets; 
+
+--What blankets cost more than 20 dollars? Display the database ordered in aisles. 
+SELECT * FROM blankets WHERE PRICE > 20 ORDER BY AISLE; 
