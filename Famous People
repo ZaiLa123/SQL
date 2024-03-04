@@ -1,0 +1,36 @@
+CREATE TABLE singers (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+fullname TEXT,
+age INTEGER);
+
+
+INSERT INTO singers (fullname, age) VALUES ("Miley Cyrus", "31");
+INSERT INTO singers (fullname, age) VALUES ("Alicia Keys", "43");
+INSERT INTO singers (fullname, age) VALUES ("Adele", "35");
+INSERT INTO singers (fullname, age) VALUES ("Rosalia", "31"); 
+
+
+CREATE TABLE singer_songs (
+id INTEGER PRIMARY KEY AUTOINCREMENT, 
+person_id INTEGER,
+song_name TEXT); 
+
+INSERT INTO singer_songs (person_id, song_name) VALUES (1, "nothing_breaks_like_a_heart");
+INSERT INTO singer_songs (person_id, song_name) VALUES (2, "in_new_york"); 
+INSERT INTO singer_songs (person_id, song_name) VALUES (3, "someone_like_you"); 
+INSERT INTO singer_songs (person_id, song_name) VALUES (4, "motomami"); 
+
+
+
+SELECT * FROM singer_songs;
+
+SELECT singers.fullname, song_name
+FROM singers
+JOIN singer_songs
+ON singers.id=singer_songs.person_id; 
+
+
+SELECT singers.fullname, age
+FROM singers
+JOIN singer_songs
+ON singers.id=singer_songs.person_id;
