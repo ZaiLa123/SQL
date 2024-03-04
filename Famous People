@@ -24,12 +24,13 @@ INSERT INTO singer_songs (person_id, song_name) VALUES (4, "motomami");
 
 SELECT * FROM singer_songs;
 
+--Display the names of each singer next to the songs they wrote.
 SELECT singers.fullname, song_name
 FROM singers
 JOIN singer_songs
 ON singers.id=singer_songs.person_id; 
 
-
+--Display the names of each singers next to their age. 
 SELECT singers.fullname, age
 FROM singers
 JOIN singer_songs
