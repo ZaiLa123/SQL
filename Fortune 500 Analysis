@@ -1,3 +1,6 @@
+#This analysis utilized the following Fortune 500 dataset:
+
+
 CREATE TABLE fortune_companies (
     company_id INTEGER PRIMARY KEY,
     company_name TEXT,
@@ -55,3 +58,33 @@ VALUES
     ('Company II', 'Telecommunications', 110.5, 2000, 1, 21, 12, 4.9),
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
+
+
+# Analysis: 
+
+#Filter data to know what kind of revenue success each company has based on revenue. 
+SELECT company_name, revenue,
+CASE WHEN revenue >= 350 THEN "High_revenue"
+WHEN revenue >= 200 THEN "Mid_revenue"
+WHEN revenue >= 100 THEN "Lower_revenue"
+ELSE "Not applicable" END "Revenue_Level"
+FROM fortune_companies
+ORDER BY revenue Asc;
+
+
+#Which industries have an average of at least 15 paid time days off and what are their average numbers of paid time days days off?
+SELECT industry,ROUND (AVG(paid_time_off_days),1) As AVG_paid_days_off
+FROM fortune_companies
+GROUP BY industry 
+HAVING AVG_paid_days_off>=15;
+
+
+#Which companies offer more than 20 paid time days off and more than 12 maternity leave weeks? 
+SELECT company_name, paid_time_off_days, maternity_leave_weeks
+FROM fortune_companies
+WHERE paid_time_off_days>=20
+AND maternity_leave_weeks>=14; 
+
+
+
+
