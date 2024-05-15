@@ -105,6 +105,7 @@ FROM fortune_companies;
 SELECT MAX (paid_time_off_days), company_name
 FROM fortune_companies; 
 
+
 #What companies offer healthcare benefits and which ones do not? 
 SELECT company_name, healthcare_benefits
 FROM fortune_companies
