@@ -86,5 +86,28 @@ WHERE paid_time_off_days>=20
 AND maternity_leave_weeks>=14; 
 
 
+#What is the average number of employees in each industry? 
+SELECT AVG (emplyees), industry
+FROM fortue_companies
+GROUP BY industry;
+
+
+#What is the average number of employees in the "Energy" industry?
+SELECT industry, employees 
+FROM fortune_companies 
+WHERE industry= "Energy"; 
+
+
+#What company offers the lowest amount of paid time off days and what company offers the highest one? 
+SELECT MIN (paid_time_off_days), company_name
+FROM fortune_companies;
+
+SELECT MAX (paid_time_off_days), company_name
+FROM fortune_companies; 
+
+#What companies offer healthcare benefits and which ones do not? 
+SELECT company_name, healthcare_benefits
+FROM fortune_companies
+WHERE healthcare_benefits= "1"; 
 
 
